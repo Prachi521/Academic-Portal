@@ -1,28 +1,18 @@
 <?php
-include 'connection.php';
-// $con = mysqli_connect('localhost','root','','education');
-function get_safe_value($conn, $str){
-    if($str !=''){
-        $str=trim($str);
-        return mysqli_real_escape_string($conn,$str);
-    }
+
+$con = mysqli_connect('localhost','root','','education');
+
+
+if(isset($POST['submit'])){
+    $name =mysqli_get_save_value($con,$_POST['name']);
+$visitor_email = mysqli_get_save_value($con,$_POST['email']);
+$subject = mysqli_get_save_value($con,$_POST['subject']);
+$message = mysqli_get_save_value($con,$_POST['message']);
+
+$query = "insert into contactdetails (name,email,subject,message)values('$name','$visitor_email', '$subject','$message')";
+$sql = mysqli_query($con,$query);
+
 }
-
-
-// if(isset($_POST['action'])){
-$name =get_safe_value($conn,$_POST['name']);
-$visitor_email = get_safe_value($conn,$_POST['email']);
-$subject = get_safe_value($conn,$_POST['subject']);
-$message = get_safe_value($conn,$_POST['message']);
-
-
-$query = "insert into contactdetails(Name,Email,Subject,Message) values ('$name','$visitor_email', '$subject','$message')";
-
-$sql = mysqli_query($conn,$query);
-$output=true;
-echo $output;
-
-// }
 
 // $email_from = 'prisha0521@gamil.com';
 

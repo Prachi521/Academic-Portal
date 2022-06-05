@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="studentdashboard.css">
+</head>
+<body>
+<div class="main">
+  <div class="dashboard">
+    <h1>
+      Dashboard
+    </h1>
+    <ul class="dashboard-list row align-items-center justify-content-center">
+      <li>
+        <div class="dashboard-item">
+          <img src="https://ucarecdn.com/2586370c-dec9-4092-abb8-33047ab8a2f3/bitcoin.png" class="logo-image" alt="image">
+          <h2>Bitcoin</h2>
+          <div>
+            <p class="price-text"> $23023 </p>
+            <p>1327 BTC</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dashboard-item">
+          <img src="https://ucarecdn.com/a27e8986-6913-4658-b1f1-8dfa4b1566ea/ethereum.png" class="logo-image" alt="image">
+          <h2>Ethereum</h2>
+          <div>
+            <p class="price-text"> $23023 </p>
+            <p>1327 BTC</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dashboard-item">
+          <img src="https://ucarecdn.com/2292cf0f-7866-4b12-a08b-dfee331e990c/litecoin.png" class="logo-image" alt="image">
+          <h2>Litecoin</h2>
+          <div>
+            <p class="price-text"> $23023 </p>
+            <p>1327 BTC</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dashboard-item">
+          <img src="https://ucarecdn.com/b7894701-c623-4705-a771-95df40fb9bdf/monero.png" class="logo-image" alt="image">
+          <h2>monero</h2>
+          <div>
+            <p class="price-text"> $23023 </p>
+            <p>1327 BTC</p>
+          </div>
+        </div>
+      </li>
+      <img src="https://ucarecdn.com/fafa3062-3a8f-4e90-9917-1650b2d008d1/shape1.png" class="shape-1" alt="image">
+      <img src="https://ucarecdn.com/54b251be-ccbd-49d1-9475-f3ee9f87cc39/shape2.png" class="shape-2" alt="image">
+      <img src="https://ucarecdn.com/0a22d466-6dad-41c1-900a-f0142d0b2684/shape3.png" class="shape-3" alt="image">
+      <img src="https://ucarecdn.com/64371f69-e556-4d08-ada9-01284cfec1f6/shape4.png" class="shape-4" alt="image">
+      <img src="https://ucarecdn.com/dd1b3c11-6abe-498c-b8ef-c106a0fe708a/shape5.png" class="shape-5" alt="image">
+    </ul>
+    <div class="note">
+      <p><strong>Note:</strong><br>
+        If you are Firefox user , then please note that Firefox is not supported backdrop-filter by default.
+        For
+        enable this option follow this below steps : <br>
+        1. Open new Firefox tab then type <span>about:config</span> in search bar and click <span>"accept
+          the risk and
+          continue"</span>. <br>
+        2. Enter <span>“layout.css.backdrop-filter.enabled”</span> in search preference name and you can see
+        value is
+        <span>false</span>
+        in this preference , so you need to change it to true. Next, enter <span>"gfx.webrender.all"</span>
+        and set it to
+        <span>true</span>
+        similarly and check codepen now.
+      </p>
+    </div>
+  </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+  var BrowserDetect = {
+    init: function () {
+      this.browser = this.searchString(this.dataBrowser) || "Other";
+      this.version =
+        this.searchVersion(navigator.userAgent) ||
+        this.searchVersion(navigator.appVersion) ||
+        "Unknown";
+    },
+    searchString: function (data) {
+      for (var i = 0; i < data.length; i++) {
+        var dataString = data[i].string;
+        this.versionSearchString = data[i].subString;
+
+        if (dataString.indexOf(data[i].subString) !== -1) {
+          return data[i].identity;
+        }
+      }
+    },
+    searchVersion: function (dataString) {
+      var index = dataString.indexOf(this.versionSearchString);
+      if (index === -1) {
+        return;
+      }
+
+      var rv = dataString.indexOf("rv:");
+      if (this.versionSearchString === "Trident" && rv !== -1) {
+        return parseFloat(dataString.substring(rv + 3));
+      } else {
+        return parseFloat(
+          dataString.substring(index + this.versionSearchString.length + 1)
+        );
+      }
+    },
+
+    dataBrowser: [
+      { string: navigator.userAgent, subString: "Firefox", identity: "Firefox" }
+    ]
+  };
+
+  BrowserDetect.init();
+  // document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
+
+  var bv = BrowserDetect.browser;
+  if (bv == "Firefox") {
+    $("body").addClass("Firefox");
+  }
+});
+
+</script>
+</body>
+</html>

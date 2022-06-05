@@ -1,12 +1,10 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
 *{
     margin: 0;
     padding: 0;
     /*font-family: 'Roboto', sans-serif;*/
     font-family: 'Bona Nova', serif;
     font-family: 'Encode Sans SC', sans-serif;
-    
 }
 body{
     scroll-behavior: smooth;
@@ -14,7 +12,7 @@ body{
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('images/university.jpg');
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('images/Sit1.jpg');
     background-position: center;
     background-size: cover;
     position: relative;
@@ -27,7 +25,7 @@ nav{
     align-items: center;
 }
 nav img{
-    width: 80px;
+    width: 170px;
     height: 80px;
     pointer-events: none;
 
@@ -86,7 +84,7 @@ nav img{
 }
 .text-box p{
     margin: 10px 0 40px;
-    font-size: 14px;
+    font-size: 30px;
     
 }
 .hero-btn{
@@ -101,8 +99,10 @@ nav img{
     cursor: pointer;
 }
 .hero-btn:hover{
-    /* border: 1px solid #f44336;
-    background: #f44336; */
+    /* border: 3px solid #e770ff;
+    border-radius: 10px 0 10px 0;
+   /* background: #f44336;*/
+    /* transition: 2s; */ 
     border: 0;
     border-radius: 0px 20px 0px 20px;
     box-shadow: 0 0 3px #b400cc, 0 0 7px #aa17d6, 0 0 20px #c70fff ; 
@@ -112,7 +112,7 @@ nav img{
 nav .fa{
     display: none;
 }
-@media(max-width:850px)
+@media(max-width:700px)
 {
     .text-box h1{
         font-size: 20px;
@@ -163,7 +163,7 @@ nav .fa{
         border: none;
     }
     nav img{
-        width: 50px;
+        width: 100px;
         height: 50px;
         pointer-events: none;
     
@@ -199,8 +199,9 @@ p{
 }
 .course-col{
     flex-basis: 31%;
+    margin-left: 10px;
     background: #fff3f3;
-    border-radius: 10px;
+    border-radius: 30px;
     margin-bottom: 5%;
     padding: 20px 12px;
     box-sizing: border-box;
@@ -214,7 +215,7 @@ h3{
 .course-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2) ;
 }
-@media (max-width: 850px)
+@media (max-width: 700px)
 {
     .row{
         flex-direction: column;
@@ -351,7 +352,7 @@ h3{
 .testimonial-col .fa{
     color: #f44336;
 }
-@media(max-width:850px){
+@media(max-width:700px){
     .testimonial-col img{
         margin-left:0px ;
         margin-right: 15px; 
@@ -377,7 +378,7 @@ h3{
     margin-bottom: 40px;
     padding: 0;
 }
-@media(max-width:850px){
+@media(max-width:700px){
     .cta h1{
         font-size: 24px;
     }
@@ -411,13 +412,6 @@ h3{
 
 
 /*   *****About us page***** */
-.about-col a{
-    color: #180706;
-}
-.about-btn{
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-}
 .sub-header{
     height: 50vh;
     width: 100;
@@ -461,21 +455,14 @@ h3{
 }
 
 /*   *****Blog Page***** */
-.about-btn{
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    color: #000;
-}
 .blog-content{
     width: 80%;
     margin: auto;
     padding: 60px 0;
-    
 
 }
 .blog-left{
     flex-basis: 65%;
-    
 }
 .blog-left img{
     width: 100%;
@@ -510,7 +497,6 @@ h3{
 }
 
 .comment-box{
-    
     border: 1px solid #ccc;
     margin: 50px 0;
     padding: 10px 20px;
@@ -519,7 +505,6 @@ h3{
     text-align: left;
 }
 .comment-form input, .comment-form textarea{
-    font-family: 'Montserrat', sans-serif;
     width: 100%;
     padding: 10px;
     margin: 15px 0;
@@ -532,7 +517,7 @@ h3{
 .comment-form button{
     margin: 10px 0;
 }
-@media(max-width:850px){
+@media(max-width:700px){
     .sub-header h1{
         font-size: 24px;
     }
@@ -579,7 +564,6 @@ h3{
     font-weight: 400;
 }
 .contact-col input, .contact-col textarea{
-    font-family: 'Montserrat', sans-serif;
     width: 100%;
     padding: 15px;
     margin-bottom: 17px;
